@@ -1,0 +1,11 @@
+- hosts: docker
+  tasks:
+    # using ansible facts lets include repo configs for our distro
+    - name: "Installing docker package manager repo"
+      include: "setup-{{ansible_distribution}}-repo.yml"
+
+    # install our docker community edition package
+    - name: "Installing docker-ce package"
+      package:
+        name: "docker-ce"
+        state: present
