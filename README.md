@@ -26,12 +26,12 @@ Uses ansible to install the puppet pre-requisites so I can deploy docker + image
 In a 'nomrmal' environment something like installing puppet, facter, etc. would be handled by your OS
 installation or deployed image.  This puppet install definition will:
 - EPEL installation
-Many [Enterprise Linux Distros](https://en.wikipedia.org/wiki/Category:Enterprise_Linux_distributions) rely on the EPEL repository to install software not shipped directly with the distro
+  - Many [Enterprise Linux Distros](https://en.wikipedia.org/wiki/Category:Enterprise_Linux_distributions) rely on the EPEL repository to install software not shipped directly with the distro
 - Install puppet and facter RPMs from the EPEL repo
 - Install librarian-puppet using the gem ruby package manager (instead of yum) as EPEL has no librarian-puppet rpm
 
 ## stage 2 - Install Docker
 [Garethr Docker Module](https://forge.puppet.com/garethr/docker/dependencies) Provides all the code for getting docker installed.
 - [Puppetlabs-Apt](https://forge.puppet.com/puppetlabs/apt) is a prequisite for garether-docker and requires a too new a version of puppet.
-I versioned liked this in the Puppetfile to 2.4.0 for compatibility
+  - I versioned locked this in the Puppetfile to 2.4.0 for compatibility
 - Apply the docker puppet manifest to actually install docker
