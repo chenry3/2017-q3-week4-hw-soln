@@ -1,0 +1,12 @@
+forge "https://forgeapi.puppetlabs.com"
+
+# carried over from HW2
+mod 'puppetlabs-firewall', '1.8.2'
+
+# apt is required for garether-docker
+# 'newest' version does not work with puppet 3.x
+# use vetsion 2.4.0
+mod 'puppetlabs-apt', '2.4.0'
+
+# module for managing docker
+mod 'garethr-docker', '5.3.0'

@@ -1,0 +1,19 @@
+- hosts: centos
+  tasks:
+    - name: "Install EPEL yum repository"
+      package:
+        name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+        state: present
+
+    - name: "Installing puppet and facter"
+      package:
+        name:
+          - facter
+          - puppet
+          - rubygems
+        state: present
+
+    - name: "Installing puppet librarian"
+      gem:
+        name: librarian-puppet
+        state: present
